@@ -11,7 +11,7 @@ try:
        # display.lcd_display_string("Informacion",2);
         owm_es = OWM(language='es')
         Pais = ',Arg'
-        API_key = 'f1b471d5f57885a2b6f6cd2b2350eed9'
+        API_key = 'APIKEY_Aqui'
         owm = OWM(API_key)
         apikey = owm.get_API_key()
         #print 'Key Utilizada->' + owm.get_API_key()
@@ -30,18 +30,18 @@ try:
         humedad = w.get_humidity()
         #FechaFormato = str(datetime.datetime.now().date())
         #Fecha = FechaFormato.split('-')
-        print TempF[0]
-        print PresF[0]
-       # display.lcd_display_string("Temp"+ TempF[0]+'C'+" Hum " + str(humedad)+ '%', 1)
-      #  display.lcd_display_string('Pres ' + PresF[0] +' hPa',2)
-       # display.lcd_display_string('Fech  '+Fecha[2]+'-'+Fecha[1]+'-'+Fecha[0],3);
+       # print TempF[0]
+        #print PresF[0]
+        display.lcd_display_string("Temp"+ TempF[0]+'C'+" Hum " + str(humedad)+ '%', 1)
+        display.lcd_display_string('Pres ' + PresF[0] +' hPa',2)
+        display.lcd_display_string('Fech  '+Fecha[2]+'-'+Fecha[1]+'-'+Fecha[0],3);
                            
-       # count = 0                
-       # while (count < 3125):
-       #     display.lcd_display_string('Hora '+str(datetime.datetime.now().time()), 4)
-       #     count = count + 1
+        count = 0                
+        while (count < 3125):  #espera 5 minutos
+            display.lcd_display_string('Hora '+str(datetime.datetime.now().time()), 4)
+            count = count + 1
             
-      #  display.lcd_clear()    
+        display.lcd_clear()    
 except KeyboardInterrupt: 
     print("Vaciando")
     display.lcd_clear()
